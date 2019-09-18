@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OffstageWidget extends StatelessWidget {
-  const OffstageWidget({
+class StackOffstageLayer extends StatelessWidget {
+  const StackOffstageLayer({
     Key key,
     @required this.index,
     @required this.selectIndex,
