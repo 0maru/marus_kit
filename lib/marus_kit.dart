@@ -1,7 +1,5 @@
 library marus_kit;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export './src/on_tap_to_unfocus.dart';
+export './src/stack_offstage_layer.dart';
+export './src/theme_switcher.dart';
