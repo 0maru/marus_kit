@@ -11,10 +11,12 @@ class BlocProvider<T extends BaseBloc> extends StatefulWidget {
   final T bloc;
   final Widget child;
 
-  static T of<T extends BaseBloc>(BuildContext context) =>
-      (context.dependOnInheritedWidgetOfExactType(aspect: _typeOf<_Inherited<T>>())
-              as _Inherited<T>)
-          .bloc;
+  static T of<T extends BaseBloc>(BuildContext context) {
+    final _Inherited<T> inherited = context.dependOnInheritedWidgetOfExactType(
+      aspect: _typeOf<_Inherited<T>>(),
+    );
+    return inherited.bloc;
+  }
 
   static Type _typeOf<T>() => T;
 
