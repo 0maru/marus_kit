@@ -59,5 +59,5 @@ class _Inherited<T extends BaseBloc> extends InheritedWidget {
   final T bloc;
 
   @override
-  bool updateShouldNotify(_Inherited old) => old.bloc != bloc;
+  bool updateShouldNotify(_Inherited<T> old) => old.bloc != bloc;
 }
