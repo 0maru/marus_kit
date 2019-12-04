@@ -1,15 +1,19 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 
 class OnTapToUnfocus extends StatelessWidget {
   const OnTapToUnfocus({
     Key key,
-    this.androidPrevButton = false,
     @required this.child,
+    this.androidPrevButton = false,
+    this.onWillPop,
   })  : assert(child != null),
         super(key: key);
 
   final Widget child;
   final bool androidPrevButton;
+  final WillPopCallback onWillPop;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +29,7 @@ class OnTapToUnfocus extends StatelessWidget {
       return child;
     }
     return WillPopScope(
-      onWillPop: () async {
-        FocusScope.of(context).unfocus();
-        return true;
-      },
+      onWillPop: onWillPop,
       child: child,
     );
   }
