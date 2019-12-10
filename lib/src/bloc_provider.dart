@@ -3,8 +3,8 @@ import './base_bloc.dart';
 
 class BlocProvider<T extends BaseBloc> extends StatefulWidget {
   const BlocProvider({
-    @required this.child,
     @required this.bloc,
+    @required this.child,
     Key key,
   }) : super(key: key);
 
