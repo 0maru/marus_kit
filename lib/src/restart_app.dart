@@ -7,12 +7,13 @@ class RestartApp extends StatefulWidget {
 
   final Widget child;
 
-  static restartApp(BuildContext context) {
+  static dynamic restartApp(BuildContext context) {
     final _RestartAppState state =
         context.ancestorStateOfType(const TypeMatcher<_RestartAppState>());
     state.restartApp();
   }
 
+  @override
   State<StatefulWidget> createState() => _RestartAppState();
 }
 
